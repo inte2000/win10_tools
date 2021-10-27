@@ -26,11 +26,11 @@ win10_ Tools uses the **boost** library as an extension of the standard library,
 
 Boost, libiconv, WTL and soui2 are widely known and widely used open source libraries. While Xconfig2 is not, but it is not far away, just here:  https://github.com/inte2000/xconfig2
 
-boost     1.70
-libIconv  1.16
-soui2     https://github.com/SOUI2/soui
-WTL       10.0.xxxx
-xconfig2  0.1.7
+- boost     1.70
+- libIconv  1.16
+- soui2     https://github.com/SOUI2/soui
+- WTL       10.0.xxxx
+- xconfig2  0.1.7
 
 Use Visual Studio 2019 (Community version is OK) to open win10tools.sln, select the corresponding configuration and compile. For the configuration of third-party libraries, it is recommended to use the property sheet files. If you don't know about property sheet configuration, here is an article on how to use property sheet files to simplify the use of third-party libraries:
 
