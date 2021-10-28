@@ -1,0 +1,2 @@
+#define TASKBAR_API __declspec(dllexport)
+#define TASKBAR_API __declspec(dllimport)

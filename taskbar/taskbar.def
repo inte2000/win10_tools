@@ -1,0 +1,6 @@
+LIBRARY taskbardll
+EXPORTS
+    InstallHook
+    UninstallHook
+    SetTaskbarMode
+    SetOptions
