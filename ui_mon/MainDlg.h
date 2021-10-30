@@ -29,6 +29,7 @@ protected:
 	void OnCommand(UINT uNotifyCode, int nID, HWND wndCtl);
 	void OnInitMenuPopup(SMenuEx* menuPopup, UINT nIndex);
 	void OnTimer(UINT_PTR idEvent);
+	void OnSysBtnClose();
 
 	//Dark mode page
 	void InitDarkModePage();
@@ -77,6 +78,7 @@ protected:
 protected:
 	
 	EVENT_MAP_BEGIN()
+		EVENT_NAME_COMMAND(L"btn_close", OnSysBtnClose)
 		EVENT_NAME_COMMAND(L"radio_light", OnRadLightClicked)
 		EVENT_NAME_COMMAND(L"radio_dark", OnRadDarkClicked)
 		EVENT_NAME_COMMAND(L"radio_auto", OnRadAutoClicked)
@@ -122,7 +124,6 @@ protected:
 		REFLECT_NOTIFICATIONS_EX()
 	END_MSG_MAP()
 
-	void AdjustPositionBySystemDpi();
 	BOOL UpdateControlToValue();
 	BOOL UpdateValueToControl();
 	void UpdateThemeModeRadio(int nThemeMode);

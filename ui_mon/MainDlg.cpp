@@ -64,17 +64,12 @@ BOOL CMainDlg::OnInitDialog( HWND hWnd, LPARAM lParam )
 
     UpdateValueToControl();
 
-    STabCtrl* pTabCtrl = FindChildByName2<STabCtrl>(L"tab_main");
-    if (pTabCtrl != nullptr)
-        pTabCtrl->SetCurSel(0);
 #ifdef _DEBUG
     CSimpleWnd::SetTimer(TIMER_THEME_CHECK, 10 * 1000, NULL);//10 秒钟检查一次
 #else
     CSimpleWnd::SetTimer(TIMER_THEME_CHECK, 5 * 60 * 1000, NULL);//5 分钟检查一次
 #endif
 
-    AdjustPositionBySystemDpi();
-   
     m_bLayoutInited = TRUE;
     return 0;
 }
@@ -99,24 +94,6 @@ void CMainDlg::OnClose()
     DestroyWindow();
 }
 
-void CMainDlg::AdjustPositionBySystemDpi()
-{
-    int nCurScale = ScaleFromSystemDpi(GetSystemDeviceDpi());
-    
-    int nOriginalScale = 100; //our skin default design as 96dpi
-    CRect rcWnd = GetWindowRect();
-    int OriWid = rcWnd.Width() * 100 / nOriginalScale;
-    int OriHei = rcWnd.Height() * 100 / nOriginalScale;
-
-    int nNewWid = OriWid * nCurScale / 100;
-    int nNewHei = OriHei * nCurScale / 100;
-
-    //SDispatchMessage(UM_SETSCALE, nCurScale, 0);
-
-    if (!CSimpleWnd::IsZoomed()) {
-        SetWindowPos(NULL, 0, 0, nNewWid, nNewHei, SWP_NOZORDER);
-    }
-}
 
 void CMainDlg::OnDpiChanged(WORD dpi, const RECT* desRect)
 {
@@ -207,6 +184,18 @@ void CMainDlg::OnTimer(UINT_PTR idEvent)
         }
     }
 }
+
+void CMainDlg::OnSysBtnClose()
+{
+    if (IsWindowVisible())
+        ShowWindow(SW_HIDE);
+    else
+    {
+        ShowWindow(SW_SHOW);
+        SetForegroundWindow(m_hWnd);
+    }
+}
+
 
 void CMainDlg::InitDarkModePage()
 {
