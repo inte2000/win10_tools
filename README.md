@@ -4,7 +4,7 @@
 
 ## theme mode setting
 
-![](https://github.com/inte2000/win10_tools/blob/main/doc/darkmode.png)
+![](doc/darkmode.png)
 
 ## taskbar setting
 
