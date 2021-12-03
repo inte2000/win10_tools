@@ -8,15 +8,15 @@
 
 ## taskbar setting
 
-![](https://github.com/inte2000/win10_tools/blob/main/doc/taskbar.png)
+![image](https://github.com/inte2000/win10_tools/blob/main/doc/taskbar.png)
 
 ## desktop theme setting
 
-![](https://github.com/inte2000/win10_tools/blob/main/doc/desktop.png)
+![image](https://github.com/inte2000/win10_tools/blob/main/doc/desktop.png)
 
 ## options
 
-![](https://github.com/inte2000/win10_tools/blob/main/doc/options.png)
+![image](https://github.com/inte2000/win10_tools/blob/main/doc/options.png)
 
 # complie
 
