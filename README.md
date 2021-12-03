@@ -4,7 +4,7 @@
 
 ## theme mode setting
 
-![](doc/darkmode.png)
+![image](doc/darkmode.png)
 
 ## taskbar setting
 
